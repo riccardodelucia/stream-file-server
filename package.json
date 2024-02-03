@@ -1,0 +1,47 @@
+{
+  "name": "file-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Node.js backend for multipart file uploads. Uploaded files are immediately sent as byte streams to a target S3 bucket. Pub/sub schema to manage microservice communication of upload outcome to interested services.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 --signal SIGINT --nolazy --watch src src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettify": "npx prettier --write .",
+    "lint": "eslint --ext .js --ignore-path .gitignore --fix src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.fht.org:computational-biology-sw-web-dev-unit/file-server.git"
+  },
+  "author": "Riccardo Roberto De Lucia",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.121.0",
+    "@aws-sdk/lib-storage": "^3.121.0",
+    "axios": "^0.27.2",
+    "busboy": "^1.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-joi-validation": "^5.0.1",
+    "express-rate-limit": "^6.4.0",
+    "helmet": "^5.1.0",
+    "hpp": "^0.2.3",
+    "joi": "^17.12.1",
+    "jose": "^4.8.3",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "nodemon": "^2.0.18",
+    "p-queue": "^7.3.0",
+    "redis": "^4.6.5",
+    "winston": "^3.8.1",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.8.8"
+  }
+}
